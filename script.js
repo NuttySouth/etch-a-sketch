@@ -34,9 +34,9 @@ Array.from(gridCells).forEach(cell =>{
 refreshBtn.addEventListener('click', refreshCells);
 
 function setSize(event){
-    let string = "auto ";
+    let size = event.target.value;
     clearGrid();
-    gridContainer.style.cssText = `grid-template-columns: ${string.repeat(event.target.value)}`
+    gridContainer.style.cssText = `grid-template-columns: repeat(${size}, auto);`
     createGrid(event.target.value);
     gridCells = document.getElementsByClassName('grid-cell');
     Array.from(gridCells).forEach(cell =>{
